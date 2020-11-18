@@ -1,0 +1,66 @@
+table{
+  background: rgba(0,0,0, .8);
+  color: lightseagreen;
+  font-family: 'Signika', sans-serif;
+  font-size: 16px;
+}
+table.highlight > tbody > tr:hover {
+  background-color: powderblue;
+}
+tr td{
+  max-width: 200px;
+  white-space: normal;
+}
+#requestMsg{
+  text-align: left;
+}
+#dustbin{
+  margin-left: 20px;
+}
+.pagination{
+  text-align: center;
+}
+.pages{
+  margin-left: 3px;
+}
+#replyFollowUpRequestinput input{
+  border-bottom:2px solid green !important;
+  font-family: 'Signika', sans-serif !important;
+  font-size: 18px !important;
+}
+#replyFollowUpRequestinput textarea{
+  border-bottom:2px solid green !important;
+  font-family: 'Signika', sans-serif !important;
+  font-size: 18px !important;
+}
+#replyFollowUpRequestinput label{
+  font-size: 18px !important;
+}
+#replyHere{
+  width: 80%;
+  border-radius: 10px;
+  overflow-y: scroll;
+}
+#replyHere::-webkit-scrollbar{
+  width: 10px;
+}
+#replyHere::-webkit-scrollbar-thumb{
+  border-radius: 5px;
+  background: rgba(0,0,0,.1);
+}
+h4{
+  margin-bottom: 30px;
+}
+#sendMail{
+  margin-left:43%;
+}
+.inputfield,textarea{
+  height: 5px !important;
+}
+textarea::-webkit-scrollbar{
+  width: 10px;
+}
+textarea::-webkit-scrollbar-thumb{
+  border-radius: 5px;
+  background: rgba(0,0,0,.1);
+}

@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <meta http-equiv="Content-Type" content="text/html.charset = utf8">
+      <title>Manage Ads</title>
+
+      <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <link rel="shortcut icon" href="">
+
+      <!--Import materialize.css-->
+      <link rel="stylesheet"
+         href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+      <link href="https://fonts.googleapis.com/css?family=Signika&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+      <link type="text/css" rel="stylesheet" href="css/administrative_style.min.css"  media="screen,projection"/>
+      <link type="text/css" rel="stylesheet" href="css/manageAds_style.min.css"  media="screen,projection"/>
+
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+
+    </head>
+
+    <body>
+      <nav class="nav-extended">
+          <div class="nav-wrapper">
+            <a href="#" class="brand-logo hide-on-med-and-down">&nbsp; Administrative Panel</a>
+            <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a><p class="hide-on-large-only">Manage Events</p>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+              <li><a href="#modal1" class="addUser"><i class="material-icons small tooltipped" data-position="bottom" data-tooltip="Add New User">person_add</i></a></li>
+              <li><a href="#modal2" class="userList"><i class="material-icons small tooltipped" data-position="bottom" data-tooltip="View Users">people</i></a></li>
+              <li><a href="#modal3" class="getOut"><i class="material-icons small tooltipped" data-position="bottom" data-tooltip="Logout">power_settings_new</i></a></li>
+            </ul>
+
+            <ul class="side-nav" id="mobile-demo">
+              <li><a href="#modal1" class="addUser">Add New User</a></li>
+              <li><a href="#modal2" class="userList">View Users</a></li>
+              <li><a href="#modal3" class="getOut">Logout</a></li>
+
+              <div class="divider"></div>
+
+                <li><a href="administrative.html" id="mtn">Maintenance</a></li>
+                <li><a href="problemReport.html" id="pr">Problem Report</a></li>
+                <li><a href="feedbacks.html" id="fb">Feedbacks</a></li>
+                <li><a href="followUpRequests.html" id="fr">Follow-up Requests</a></li>
+                <li><a href="manageAds.html" id="ma">Manage Events</a></li>
+            </ul>
+          </div>
+
+          <div class="nav-content">
+            <ul class="tabs tabs-transparent hide-on-med-and-down row" id="nav-mobile">
+              <li class="tab col s2"><a href="administrative.html" id="mtn">Maintenance</a></li>
+              <li class="tab col s3"><a href="problemReport.html" id="pr">Problem Report</a></li>
+              <li class="tab col s2"><a href="feedbacks.html" id="fb">Feedbacks</a></li>
+              <li class="tab col s2"><a href="followUpRequests.html" id="fr">Follow-up Requests</a></li>
+              <li class="tab col s3"><a href="manageAds.html" id="ma" class="active">Manage Events</a></li>
+            </ul>
+          </div>
+      </nav>
+
+      <!-- MODAL STRUCTURE 1-->
+      <div id="modal1" class="modal #212121 grey darken-4">
+        <div class="modal-content">
+          <h4>Add New User</h4>
+
+              <form id="addUserForm">
+                <div class="row">
+                    <div class="input-field col s12">
+                      <i class="material-icons prefix">account_circle</i>
+                      <input type="text" id="icon_prefix_un" class="validate" onkeydown="receiveWord()" required>
+                      <label for="icon_prefix">Username</label>
+                    </div>
+
+                    <div class="input-field col s12">
+                      <i class="material-icons prefix">lock_outline</i>
+                      <input type="password" id="icon_prefix_pw1" class="validate" onkeydown="receiveWord()" required>
+                      <label for="icon_prefix">Password</label>
+                    </div>
+
+                    <div class="input-field col s12">
+                      <i class="material-icons prefix">lock_outline</i>
+                      <input type="password" id="icon_prefix_pw2" class="validate" onkeydown="receiveWord()" required>
+                      <label for="icon_prefix">Confirm Password</label>
+                    </div>
+
+                     <div class="input-field col s12">
+                       <button type="submit" class="waves-effect waves-light btn disabled" style="margin-left:140px;">Confirm</button>
+                     </div>
+
+                     <div id="status" class="red-text">
+
+                     </div>
+
+                </div><!--row-->
+              </form>
+
+        </div><!--modal-content-->
+      </div><!--modal 1-->
+
+      <!-- MODAL STRUCTURE 2-->
+      <div id="modal2" class="modal #212121 grey darken-4" >
+        <div class="modal-content">
+          <h4>Users List</h4>
+          <div class="col s12">
+              <div class="row" >
+                  <ul class="collection" id="ulist">
+
+                  </ul>
+              </div><!--row-->
+            </div><!--col s12-->
+        </div><!--modal-content-->
+      </div><!--modal 2-->
+
+      <!--problem report list-->
+      <table class="responsive-table highlight centered">
+        <thead>
+          <tr>
+            <th id="index">No.</th>
+            <th id="sTime">Start date</th>
+            <th id="eTime">End date</th>
+            <th id="sDate">Start time </th>
+            <th id="eDate">End time</th>
+            <th id="headTitle">Title</th>
+            <th>
+              <a href="#modalEventDetailPublish" onclick="publishButton(event)" class="btn-floating btn-medium btn tooltipped pulse" data-position="left" data-tooltip="Publish" id="drop1">
+              <i class="material-icons" >publish</i></a>
+
+              <a href="#" class="dropdown-button btn-floating btn-medium btn tooltipped" data-position="top" data-tooltip="Sort by" data-activates="dropdown1" id="drop2">
+              <i class="material-icons" >sort</i></a>
+              <ul id="dropdown1" class="dropdown-content">
+                <li><a href="#" id="sortStartDate" onclick="sort('1')">Start date</a></li>
+                <li><a href="#" id="sortEndDate" onclick="sort('2')">End date</a></li>
+              </ul>
+
+              <a href="#" class="dropdown-button btn-floating btn-medium btn tooltipped" data-position="right" data-tooltip="Order by" data-activates="dropdown2" id="drop3">
+                <i class="material-icons" >low_priority</i></a>
+                <ul id="dropdown2" class="dropdown-content">
+                  <li><a href="#" id="asc" onclick="sort('3')">Ascending</a></li>
+                  <li><a href="#" id="decs" onclick="sort('4')">Descending</a></li>
+                </ul>
+            </th>
+          </tr>
+        </thead>
+
+        <tbody id="manageAdsList">
+
+        </tbody>
+    </table><!--row-->
+<!--End problem report list-->
+
+          <!-- MODAL STRUCTURE 3-->
+          <div id="modalDetailAds" class="modal #212121 grey darken-4 onlyHere">
+            <div class="modal-content">
+              <h4>Event Details</h4>
+
+                  <form id="eventDetailsForm" method="post">
+
+                      <input value="" id="documentKey" type="hidden" class="validate white-text" name="docKey">
+                      <input value="update_ad" id="documentType" type="hidden" class="validate white-text" name="type">
+
+                    <div class="row">
+                      <div class="input-field col s6">
+                        <img id='eventImg' class='responsive-img' src=''>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="file-field input-field col s12">
+                        <div class="btn">
+                          <span>Upload image</span>
+                          <input type="file" name="img" id="imgInp" accept="image/x-png,image/jpeg" />
+                        </div>
+                        <div class="file-path-wrapper">
+                          <input class="file-path validate" type="text" placeholder="Accept only JPEG or PNG file format">
+                        </div>
+                      </div>
+                    </div>
+
+
+
+
+
+                    <div class="row">
+                        <div class="input-field col s12">
+                          <input value="" id="title" type="text" class="validate white-text" name="title" required>
+                          <label id="titleLabel" for="title" class="teal-text text-lighten-2 active">Event Title:</label>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="input-field col s6">
+                          <input type="text" class="datepicker" id="startDate" name="startDate" required>
+                          <label id="startDateLabel" for="startDate" class="teal-text text-lighten-2 active">Start Date:</label>
+                        </div>
+
+
+                        <div class="input-field col s6">
+                          <input  type="text" class="datepicker" id="endDate" name="endDate" required>
+                          <label id="endDateLabel" for="endDate" class="teal-text text-lighten-2 active">End Date:</label>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="input-field col s6">
+                          <input type="text" class="timepicker" id="startTime" name="startTime">
+                          <label id="startTimeLabel" for="startTime" class="teal-text text-lighten-2 active">Start Time:</label>
+                        </div>
+
+                        <div class="input-field col s6">
+                          <input type="text" class="timepicker" id="endTime" name="endTime" required>
+                          <label id="endTimeLabel" for="endTime" class="teal-text text-lighten-2 active">End Time:</label>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="input-field col s12" name="note">
+                          <textarea id="note" type="text" class="materialize-textarea white-text" name="note"></textarea>
+                          <label id="noteLabel" for="note" class="teal-text text-lighten-2 active">Note:</label>
+                        </div>
+                    </div>
+
+                    <button type='submit' class='waves-effect waves-light btn' id='updateEventsBtn' onclick="update(event)">Update</button>
+                    
+                  </form>
+            </div><!--modal-content-->
+          </div><!--modal 3-->
+
+          <!-- MODAL STRUCTURE 4-->
+          <div id="modalEventDetailPublish" class="modal #212121 grey darken-4 onlyHere">
+            <div class="modal-content">
+              <h4>Event Details</h4>
+
+                  <form id="eventPublishForm" method="post">
+                    <input value="push_ad" id="documentType" type="hidden" class="validate white-text" name="type">
+                    <div class="row">
+                      <div class="input-field col s6">
+                        <img id='eventPubImg' class='responsive-img' src=''>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="file-field input-field col s12">
+                        <div class="btn">
+                          <span>Upload image</span>
+                          <input type="file" name="img" id="imgUpload" accept="image/x-png,image/jpeg" />
+                        </div>
+                        <div class="file-path-wrapper">
+                          <input class="file-path validate" type="text" placeholder="Accept only JPEG or PNG file format" id="filePath">
+                        </div>
+                      </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="input-field col s12">
+                          <input value="" id="titleP" type="text" class="validate white-text" name="title" required>
+                          <label id="titleLabelP" for="titleP" class="teal-text text-lighten-2 active">Event Title:</label>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <input type="text" class="datepicker" id="startDateP" name="startDate" required>
+                          <label id="startDateLabelP" for="startDateP" class="teal-text text-lighten-2 active">Start Date:</label>
+                        </div>
+
+
+                        <div class="input-field col s6">
+                          <input  type="text" class="datepicker" id="endDateP" name="endDate" required>
+                          <label id="endDateLabelP" for="endDateP" class="teal-text text-lighten-2 active">End Date:</label>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="input-field col s6">
+                          <input type="text" class="timepicker" id="startTimeP" name="startTime" required>
+                          <label id="startTimeLabelP" for="startTimeP" class="teal-text text-lighten-2 active">Start Time:</label>
+                        </div>
+
+                        <div class="input-field col s6">
+                          <input type="text" class="timepicker" id="endTimeP" name="endTime" required>
+                          <label id="endTimeLabelP" for="endTimeP" class="teal-text text-lighten-2 active">End Time:</label>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="input-field col s12" name="note">
+                          <textarea id="noteP" type="text" class="materialize-textarea white-text" name="note"></textarea>
+                          <label id="noteLabelP" for="noteP" class="teal-text text-lighten-2 active">Note:</label>
+                        </div>
+                    </div>
+
+                    <button type='submit' class='waves-effect waves-light btn' id='publishEventsBtn' onclick="publish(event)">Publish</button>
+
+
+                  </form>
+            </div><!--modal-content-->
+          </div><!--modal 4-->
+          <!--Pagination-->
+          <div class="row">
+          <ul class="pagination col s12">
+
+          </ul>
+        </div>
+
+
+    </body>
+  </html>
+
+  <!--JavaScript at end of body for optimized loading-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
+  <script type="text/javascript" src="js/administrative.js"></script>
+  <script type="text/javascript" src="js/manageAds.js"></script>

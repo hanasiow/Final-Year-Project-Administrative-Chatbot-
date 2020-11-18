@@ -1,0 +1,53 @@
+table{
+  background: rgba(0,0,0, .8);
+  color: lightseagreen;
+  font-family: 'Signika', sans-serif;
+  font-size: 16px;
+}
+table.highlight > tbody > tr:hover {
+  background-color: powderblue;
+}
+tr td{
+  max-width: 300px;
+  white-space: normal;
+}
+thead{
+  width: 150px;
+}
+#drop2{
+  margin-left: 10%;
+}
+#FListModal{
+  width: 80%;
+  border-radius: 10px;
+  overflow-y: scroll;
+}
+#FListModal::-webkit-scrollbar{
+  width: 10px;
+}
+#FListModal::-webkit-scrollbar-thumb{
+  border-radius: 5px;
+  background: rgba(0,0,0,.1);
+}
+#dustbin{
+  margin-left: 20px;
+}
+.pagination{
+  text-align: center;
+}
+.pages{
+  margin-left: 3px;
+}
+textarea{
+  overflow-y: scroll !important;
+}
+textarea::-webkit-scrollbar{
+  width: 10px;
+}
+textarea::-webkit-scrollbar-thumb{
+  border-radius: 5px;
+  background: rgba(0,0,0,.5);
+}
+.checked{
+  color: orange !important;
+}

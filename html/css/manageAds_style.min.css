@@ -1,0 +1,43 @@
+table{
+  background: rgba(0,0,0, .8);
+  color: lightseagreen;
+  font-family: 'Signika', sans-serif;
+  font-size: 16px;
+}
+table.highlight > tbody > tr:hover {
+  background-color: powderblue;
+}
+tr td{
+  max-width: 300px;
+  white-space: normal;
+}
+#drop2,#drop3{
+  margin-left: 10%;
+}
+#modalDetailAds,#modalEventDetailPublish{
+  width: 80%;
+  border-radius: 10px;
+  overflow-y: scroll;
+}
+#modalDetailAds::-webkit-scrollbar,#modalEventDetailPublish::-webkit-scrollbar{
+  width: 10px;
+}
+#modalDetailAds::-webkit-scrollbar-thumb,#modalEventDetailPublish::-webkit-scrollbar-thumb{
+  border-radius: 5px;
+  background: rgba(0,0,0,.1);
+}
+#updateEventsBtn,#publishEventsBtn{
+  margin-left:40%;
+}
+#dustbin{
+  margin-left: 20px;
+}
+.pagination{
+  text-align: center;
+}
+.pages{
+  margin-left: 3px;
+}
+#titleLeft{
+  overflow-wrap: break-word;
+}

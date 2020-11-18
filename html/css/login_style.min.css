@@ -1,0 +1,59 @@
+body{
+  background-image: url(images/mmu.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-family: 'Signika', sans-serif;
+  width:100%;
+  height: 63%;
+}
+.login{
+  margin-top:10px;
+  width: 100%;
+  height: 500px;
+  min-width: 400px;
+}
+#header{
+  margin-top:200px;
+  text-align: center;
+  font-family: 'Signika', sans-serif;
+  font-weight: 300;
+}
+h3{
+  font-size: 80px;
+  -webkit-animation: glow 1s ease-in-out infinite alternate;
+  -moz-animation: glow 1s ease-in-out infinite alternate;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px DarkSlateBlue, 0 0 40px DarkSlateBlue, 0 0 50px DarkSlateBlue, 0 0 60px DarkSlateBlue, 0 0 70px DarkSlateBlue;
+  }
+
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px SlateBlue, 0 0 40px SlateBlue, 0 0 50px SlateBlue, 0 0 60px SlateBlue, 0 0 70px SlateBlue, 0 0 80px SlateBlue;
+  }
+}
+p{
+  color: white;
+}
+
+#login-form{
+  width: 350px;
+  padding: 15px;
+  margin-top:120px;
+  background: rgba(0,0,0, .5);
+  font-family: 'Signika', sans-serif;
+  border-radius: 5px;
+  height:300px;
+}
+label{
+  font-size: 25px;
+  color: white;
+}
+input:focus{
+  color: lightsteelblue;
+  font-family: 'Signika', sans-serif;
+  font-size: 20px !important;
+  background-color: rgba(0,0,0, 0);
+}

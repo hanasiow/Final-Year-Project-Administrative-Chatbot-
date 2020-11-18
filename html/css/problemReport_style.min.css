@@ -1,0 +1,57 @@
+#triggerInt{
+  width: 80%;
+  border-radius: 10px;
+  overflow-y: scroll;
+}
+#triggerInt::-webkit-scrollbar{
+  width: 10px;
+}
+#triggerInt::-webkit-scrollbar-thumb{
+  border-radius: 5px;
+  background: rgba(0,0,0,.1);
+}
+table{
+  background: rgba(0,0,0, .8);
+  color: lightseagreen;
+  font-family: 'Signika', sans-serif;
+  font-size: 16px;
+}
+table.highlight > tbody > tr:hover {
+  background-color: powderblue;
+}
+#drop2{
+  margin-left: 20%;
+}
+tr td{
+  max-width: 200px;
+  white-space: normal;
+}
+table.responsive-table #description{
+  text-align: left;
+  overflow-wrap: break-word;
+}
+#update{
+  margin-left:25%;
+}
+#remove{
+  margin-left:45%;
+}
+#reportDetails input{
+  border-bottom:2px solid green !important;
+  font-family: 'Signika', sans-serif !important;
+  font-size: 18px !important;
+}
+#reportDetails textarea{
+  border-bottom:2px solid green !important;
+  font-family: 'Signika', sans-serif !important;
+  font-size: 18px !important;
+}
+#reportDetails label{
+  font-size: 18px !important;
+}
+.pagination{
+  text-align: center;
+}
+.pages{
+  margin-left: 3px;
+}
